@@ -1,0 +1,16 @@
+while True:
+    user_action = input("Type add, show, edit, file or exit: ")
+    user_action = user_action.strip()
+    match user_action:
+      case 'add':
+        todo = input("Enter a todo: ")
+        todo_list.append(todo)
+      case 'show':
+        for index, item in enumerate(todo_list):
+          row = f"{index+1}-{item}"
+          print(row)
+      case 'edit':
+        number = int(input("Number of the todo to edit: "))
+        number = number - 1
+        new_todo = input("Enter the new todo: ")
+        todo_list[number] = new_todo
